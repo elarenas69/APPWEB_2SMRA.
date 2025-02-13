@@ -1,0 +1,55 @@
+
+
+/* ---- ETIQUETAS GENERALES ----  */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+/* ---- ETIQUETAS CLASES ----  */
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.main__titulo {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.75rem;
+    margin-bottom: 8rem;
+}
+
+
+.main__article{
+    background-color: whitesmoke;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 50%;    
+}
+
+.main__article__parrafo{
+    color: gray;
+}
+
+.main__article__btn{
+    margin-top: 1.75rem;
+    color: white;
+    background-color: rgb(56, 56, 221);
+    border-radius: 0.33rem;
+    width: 14rem;
+    height: 2rem;
+    border-style: none;
+}
+
+.main__article__btn:hover{
+    background-color: darkcyan;
+}
