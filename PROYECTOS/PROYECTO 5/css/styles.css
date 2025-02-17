@@ -4,27 +4,93 @@
     box-sizing: border-box;
 }
 
+
+.body{
+    background-color: rgb(211, 211, 211);
+
+}
+
 .main{
+    margin: 1rem;
+    background-color: rgb(238, 238, 210);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main__title{
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+    margin-bottom: 2rem;
+
 
 }
 
 .section1{
-
-}
-
-.section2{
-
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
 }
 
 .section1__text{
-
+    border-radius: 0.45rem;
+    width: 15rem;
+    padding: 0.5rem;
+    margin-right: 2.5rem;
 }
 
 .section1__button{
-
+    border-radius: 0.45rem;
+    width: 10rem;
+    background-color: rgb(24, 73, 24);
+    color: antiquewhite;
 }
+
+.body__main__boton{
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: aqua;
+    border-style: none;
+}
+
+.section3_button{
+    background-color: rgb(50, 224, 255);
+    border: none;
+    margin: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+
+
+/*CLASES DE JAVASCRIPT*/
+
 
 .section2__ul{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem;
     
+
+    }
+
+
+.section2__ul__li__button{
+    display: flex;
+    margin-left: 5rem;
+    background-color: red;
+    margin-bottom: 1rem;
+
 }
+
+
+.section2__ul__li{
+    display: flex;
+    margin-bottom: 1rem;
+
+}
+
+

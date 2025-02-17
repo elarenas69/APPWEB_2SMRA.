@@ -1,45 +1,45 @@
-// Variables
+// DECLARAR VARIABLES
 
 const main = document.querySelector(".main");
 const btn = document.querySelector(".section1__button");
 const txt = document.querySelector(".section1__text");
 const secul = document.querySelector(".section2__ul");
-console.log(btn);
 
 
-// Funciones 
+
+// CREAR FUNCIONES 
 
 function AddTask(){
 
     // const texto = txt.value;
 
-    if ( txt.value.trim() != ""){
+    if ( txt.value.trim() != ""){ // QUITAR ESPACIOS EN BLANCO
 
-    // Crear elementos
+    // CREAR ELEMENTOS
         const secil = document.createElement("li");
         const secilbtn = document.createElement("button");
    
-    // Añadir Clases
+    // AÑADIR LAS CLASES
         secil.classList.add("section2__ul__li");
         secilbtn.classList.add("section2__ul__li__button");
     
-    //Añadir contenido
+    //AÑADIR EL COBNTENIDO
         secil.textContent = txt.value;
         secilbtn.textContent = "X";  
    
-   // Hacer hijos
+   // HACER LOS HIJOS
         secul.appendChild(secil);
         secil.appendChild(secilbtn);
     console.log("sdds");
 
-    //Eliminar tarea creada
+    //ELIMINAR LAS TAREAS
     secilbtn.addEventListener("click", function(){
 
         secil.remove();
 
     });
 
-    // Eliminar texto despues de enviar
+    // ELIMINAR EL TEXTO AL ENVIAR
         txt.value = "";
 
     }else{
@@ -47,7 +47,7 @@ function AddTask(){
     };
 } 
 
-// Llamar a la funcion para crear una nueva tarea
+// LLAMAR FUNCIONM PARA LA TAREA CREADA
 btn.addEventListener("click", function(){
         AddTask();
 

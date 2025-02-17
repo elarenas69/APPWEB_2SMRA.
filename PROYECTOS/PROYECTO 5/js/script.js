@@ -1,62 +1,69 @@
-// Variables
+// DECLARAR VARIABLES
 
-const main = document.querySelector(".main");
 const btn = document.querySelector(".section1__button");
 const txt = document.querySelector(".section1__text");
 const secul = document.querySelector(".section2__ul");
+const btn_r = document.querySelector(".section3_button");
 const array = [];
-console.log(btn);
 
+// CREAR FUNCIONES
 
-// Funciones 
-
-function AddTask(){
-
-    // const texto = txt.value;
-
-    if ( txt.value.trim() != ""){
-
-    // Crear elementos
+function AddTask() {
+    if (txt.value.trim() !== "") {
+        // CREAR ELEMENTOS
         const secil = document.createElement("li");
         const secilbtn = document.createElement("button");
-   
-    // Añadir Clases
+
+        // AÑADIR CLASES
         secil.classList.add("section2__ul__li");
         secilbtn.classList.add("section2__ul__li__button");
-    
-    //Añadir contenido
+
+        // AÑADIR CONTENIDO
         secil.textContent = txt.value;
-        secilbtn.textContent = "X";  
-   
-   // Hacer hijos
-        secul.appendChild(secil);
+        secilbtn.textContent = "X";
+
+        // AGREGAR TAREA AL ARRAY
+        array.push(txt.value);
+        console.log(array);
+
+        // HACERLOS HIJOS
         secil.appendChild(secilbtn);
-    console.log("sdds");
+        secul.appendChild(secil);
 
-    //Eliminar tarea creada
-    secilbtn.addEventListener("click", function(){
+        // ELIMINAR TAREA
+        secilbtn.addEventListener("click", function () {
+            const index = array.indexOf(txt.value);
+            if (index !== -1) {
+                array.splice(index, 1);
+                console.log(array);
+            }
+            secil.remove();
+        });
 
-        secil.remove();
-
-    });
-
-    // Eliminar texto despues de enviar
+        // ELIMINAR TEXTO ENVIADO
         txt.value = "";
-
-    // Guardar en un array
-
-    array.
-
-    console.log(array)
-
-    }else{
+    } else {
         alert("No ha introducido ninguna tarea");
-    };
-} 
+    }
+}
 
-// Llamar a la funcion para crear una nueva tarea
-btn.addEventListener("click", function(){
-        AddTask();
+// SELECCIONAR Y RESALTAR UNA TAREA ALEATORIAMENTE
+btn_r.addEventListener("click", function () {
+    if (array.length > 0) {
+        const tarea_texto = array[Math.floor(Math.random() * array.length)];
+        const tareas = document.querySelectorAll(".section2__ul__li");
 
+        tareas.forEach((tarea) => {
+            if (tarea.firstChild.textContent === tarea_texto) {
+                tarea.style.backgroundColor = "yellow";
+            } else {
+                tarea.style.backgroundColor = "";
+            }
+        });
+    } else {
+        alert("No hay tareas para seleccionar.");
+    }
 });
 
+
+btn.addEventListener("click", AddTask);
